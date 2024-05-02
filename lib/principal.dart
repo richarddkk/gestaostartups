@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class Principal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.black,
+    return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.grey[900],
-          title: Text('App'),
-        ),
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                icon: Icon(Icons.menu, color: Color.fromARGB(255, 255, 255, 255)),
+                onPressed: () => Scaffold.of(context).openDrawer(),
+              );
+            }),
+          title: Text('App', style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
+          backgroundColor: const Color.fromARGB(255, 0, 37, 48),
+          ),
+        backgroundColor: Colors.black,
         drawer: NavigationDrawer(),
+        drawerScrimColor: const Color.fromARGB(255, 0, 37, 48),
         body: ContentArea(),
-      ),
-    );
+        );
   }
 }
 
@@ -27,9 +28,11 @@ class NavigationDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.grey[900],
+        color: const Color.fromARGB(255, 0, 0, 0),
         child: ListView(
           children: <Widget>[
+            Image.asset("Imagens/coruja_circulo.png"),
+
             ListTile(
               leading: Icon(Icons.view_agenda, color: Colors.white),
               title: Text('Planos', style: TextStyle(color: Colors.white)),

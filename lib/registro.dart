@@ -6,14 +6,14 @@ class Registro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    Color upperNameColor = const Color.fromARGB(255, 255, 255, 255)!;
+    Color upperNameColor = const Color.fromARGB(255, 255, 255, 255);
 
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.black,
 
       body: Column(children: [
         Container(
-          width: screenSize.width, height: 350,
+          width: screenSize.width, height: 380,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("Imagens/cervo.png"),
@@ -27,7 +27,7 @@ class Registro extends StatelessWidget {
             ),
 
             const Padding(
-              padding: EdgeInsets.only(top: 50, left: 40),
+              padding: EdgeInsets.only(top: 100, left: 40),
               child: Text("Criar nova Conta", style: TextStyle(color: Colors.white, fontSize: 55.0, height: 1)),
             ),
             Padding(
@@ -43,7 +43,7 @@ class Registro extends StatelessWidget {
           ])),
 
         Padding(
-          padding: const EdgeInsets.only(top: 30.0),
+          padding: const EdgeInsets.only(top: 10.0),
           child: roundedTextfield(screenSize: screenSize, upperName: "Nome", upperNameColor: upperNameColor),
         ),
         const SizedBox(height: 10),
@@ -61,9 +61,9 @@ class Registro extends StatelessWidget {
             color: const Color.fromARGB(255, 0, 21, 34),
             child: Center(
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 0, 37, 48)),
+                style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 0, 0, 0)),
                 onPressed: () {},
-                child: SizedBox(width: 200, height: 50, child: Center(child: Text("Enviar", style: TextStyle(fontSize: 20.0, color: Colors.blue[400]))))
+                child: SizedBox(width: 200, height: 50, child: Center(child: Text("Enviar", style: TextStyle(fontSize: 20.0, color: const Color.fromARGB(255, 255, 255, 255)))))
               ),
             ),
           ),

@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'commonWidgets.dart';
 import 'registro.dart';
+import 'principal.dart';
+import 'planos.dart';
+import 'cursos.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: "Registro",
     routes: {
+      "Cursos": (context) => Cursos(),
+      "Planos": (context) => Planos(),
+      "Principal": (context) => Principal(), 
       "Login": (context) => Login(),
       "Registro": (context) => Registro(),
     },
@@ -18,7 +24,7 @@ class Login extends StatelessWidget {
     Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.black,
       body: Column(
         children: [
           Container(

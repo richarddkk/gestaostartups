@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class Cursos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,9 +14,10 @@ class MyApp extends StatelessWidget {
 
 class CoursesScreen extends StatelessWidget {
   final List<Course> courses = [
-    Course('Como utilizar a plataforma', 'assets/images/course1.png'),
-    Course('Em breve', 'assets/images/course2.png'),
-    Course('Estratégia de dados', 'assets/images/course3.png'),
+    Course('Curso 1', 'Descrição do curso 1'),
+    Course('Curso 2', 'Descrição do curso 2'),
+    Course('Curso 3', 'Descrição do curso 3'),
+    Course('Curso 4', 'Descrição do curso 4'),
   ];
 
   @override
@@ -46,9 +43,9 @@ class CoursesScreen extends StatelessWidget {
 
 class Course {
   final String title;
-  final String imageUrl;
+  final String description;
 
-  Course(this.title, this.imageUrl);
+  Course(this.title, this.description);
 }
 
 class CourseCard extends StatelessWidget {
@@ -59,11 +56,17 @@ class CourseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Column(
-        children: <Widget>[
-          Image.asset(course.imageUrl),
-          Text(course.title),
-        ],
+      color: Colors.grey[900], // cor do card
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(course.title, style: TextStyle(fontSize: 20, color: Colors.white)),
+            SizedBox(height: 8),
+            Text(course.description, style: TextStyle(fontSize: 16, color: Colors.white)),
+          ],
+        ),
       ),
     );
   }
